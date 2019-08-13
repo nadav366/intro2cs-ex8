@@ -1,0 +1,52 @@
+nadav366
+205457534
+Nadav Har-tuv
+I talked about the ex with Guy Katz, Yair Shemer, Itay Tayar and Ortal Glatt.
+
+#####################
+#   part 1-         #
+#####################
+
+In this section I wrote a function that accepts Sudoku, which is represented
+in a two-dimensional array, with empty cells marked by 0.
+
+The work method was followed by a backtracking algorithm,
+which means that the program scans all the empty places,
+and for each one searches for all legal attachments to fill it.
+"Fill" the cell with one of the options and continue to try and solve.
+If you reach a point where there are no valid options, mark the cell back as
+an empty cell and go back to try another option in the previous blank cell.
+
+When all the cells are successfully filled, Sudoku is resolved and the
+function returns True.
+If we are unable to fill, the program returns all the way back, meaning all
+empty cells are marked back as empty, and False returns.
+
+The software uses several auxiliary functions -
+* get_possible_numbers - calculates for a cell, set of all the
+    numbers "rules" to assign to it
+* num_in_square - checks whether a number appears in an inner square
+* num_in_row - checks whether a number appears in a particular column
+
+#####################
+#   part 2-         #
+#####################
+
+In this section I have realized three variations to solve the same problem -
+Calculate all sorted subsets in size k from (0, ..., n-1).
+In practice, I practiced different types of recursion.
+
+* print_k_subsets - A recursive function that prints all the subsets.
+    I chose to implement the function by using tuples because it seems to me
+    the most elegant, organized and easiest way to understand.
+
+* fill_k_subsets - A recursive function that fill in list all sorted subsets.
+    I could have realized the same function as before, using tupels
+    but wanted to practice the cur_set method.
+    In this method, the recursion works with a list of "markers" that
+    indicate which organs to take and which ones do not.
+
+* return_k_subsets - A recursive function that return list with all subsets.
+    In this case, we are not allowed to send the lists as arguments.
+    So the recursion is structured so that it "enters" to the inside and
+    returns each stage the updated list by adding all possible scissors.
